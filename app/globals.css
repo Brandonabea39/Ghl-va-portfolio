@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-zinc-800 antialiased;
+}
+
+@layer utilities {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid theme("colors.accent.600");
+  outline-offset: 2px;
+}
