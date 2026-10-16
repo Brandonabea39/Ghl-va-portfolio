@@ -87,7 +87,9 @@ export const projects: Project[] = [
       "Demo build showcasing a restaurant web presence done entirely inside GoHighLevel, so the business runs its site, forms, and follow-up from one platform.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "GHL Forms", "Responsive design"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/restaurant-homepage.jpg", alt: "Restaurant homepage with a food photography hero, menu call to action, and featured meal categories.", caption: "Restaurant homepage — food-led hero and menu discovery." },
+    ],
     videos: [],
     liveUrl: "https://app.gohighlevel.com/v2/preview/73mW9lpRnAiBXNUjxOHr",
     results: {
@@ -108,7 +110,9 @@ export const projects: Project[] = [
       "A fitness studio website built in GoHighLevel with class/program presentation and lead-capture sections designed to feed the CRM.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "GHL Forms", "Responsive design"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/fitness-classes.jpg", alt: "Fitness studio classes section with a dark background, workout imagery, and class details.", caption: "Fitness classes — high-energy imagery and program discovery." },
+    ],
     videos: [],
     liveUrl: "https://link.storvelo.com/preview/R9wtbsG04OAvYIzVUr3a",
     results: {
@@ -129,7 +133,9 @@ export const projects: Project[] = [
       "A real-estate web presence built in GoHighLevel, structured around listings presentation and buyer/seller enquiry capture.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "GHL Forms", "Responsive design"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/real-estate-listings.jpg", alt: "Real estate featured properties section with listing cards, property photos, prices, and sale or rent badges.", caption: "Property listings — image-led cards with clear sale and rental labels." },
+    ],
     videos: [],
     liveUrl: "https://app.gohighlevel.com/v2/preview/cGuYRPVZh4n1P3Z0UOTB",
     results: {
@@ -149,7 +155,9 @@ export const projects: Project[] = [
       "A healthcare practice website built in GoHighLevel with service pages and appointment-request capture.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "GHL Forms", "GHL Calendars"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/healthcare-practice.jpg", alt: "VitalCare healthcare homepage with a pale blue hero, care-focused message, and appointment booking actions.", caption: "Healthcare homepage — clear care messaging and appointment access." },
+    ],
     videos: [],
     liveUrl: "https://link.storvelo.com/preview/XmiEVzRlOJTEMMujhGfQ",
     results: {
@@ -169,7 +177,9 @@ export const projects: Project[] = [
       "A calm, trust-focused wellness practice website built in GoHighLevel, designed around approachability and easy first contact.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "GHL Forms", "Responsive design"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/wellness-practice.jpg", alt: "InnerLight Wellness homepage with a teal wellness hero, navigation, and appointment booking call to action.", caption: "Wellness practice homepage — calm visual direction and appointment call to action." },
+    ],
     videos: [],
     liveUrl: "https://app.gohighlevel.com/v2/preview/5puWImb7g7rT8UA6XnE7",
     results: {
@@ -189,7 +199,9 @@ export const projects: Project[] = [
       "A visual-first fashion brand website built in GoHighLevel, led by imagery and collection presentation.",
     role: "Design and full build in the GHL website builder.",
     tools: ["GoHighLevel Websites", "Responsive design"],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/websites/fashion-store.jpg", alt: "Fashion storefront homepage with a red campaign hero, shopping buttons, and a row of product categories.", caption: "Fashion storefront homepage — campaign hero and category navigation." },
+    ],
     videos: [],
     liveUrl: "https://link.storvelo.com/preview/3SJ62rOuj41mQJE2Dyyf",
     results: {
