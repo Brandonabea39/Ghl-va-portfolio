@@ -5,7 +5,8 @@
  * Fields left as empty strings are hidden on the site rather than faked.
  */
 export const site = {
-  name: "My Portfolio",
+  name: "Macdolf's Portfolio",
+  personName: "Cho Macdolf Ayong",
   role: "GoHighLevel Virtual Assistant & Automation Specialist",
   tagline:
     "GoHighLevel systems, workflows & automation that work for your business.",
@@ -15,8 +16,8 @@ export const site = {
   // Set when deployed, e.g. "https://portfolio.example.com" — used for sitemap/OG URLs.
   url: "https://ghl-va-portfolio.vercel.app",
   // Contact details — leave empty to hide. Never invent these.
-  email: "brandonabea39@gmail.com",
-  linkedin: "https://www.linkedin.com/in/abeabrandon/",
+  email: "Macdolf67166@gmail.com",
+  linkedin: "https://www.linkedin.com/in/cho-macdolf-766021292",
   upwork: "",
   calendarLink: "https://calendar.app.google/PPpBqN414yVXSp5J7",
 } as const;
