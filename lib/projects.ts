@@ -237,7 +237,9 @@ export const projects: Project[] = [
       "Not engaged → next follow-up message is sent",
       "After the final touch, lead status is updated and the lead exits the workflow",
     ],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/workflows/lead-follow-up.svg", alt: "Illustrative lead follow-up workflow map showing enquiry capture, instant reply, engagement checks and pipeline updates.", caption: "Illustrative workflow map — enquiry through timely follow-up and pipeline update." },
+    ],
     videos: [],
     results: {
       intended: [
@@ -272,7 +274,9 @@ export const projects: Project[] = [
       "Build smart lists for the views the team actually works from",
       "Set up duplicate-prevention rules on create",
     ],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/workflows/crm-pipeline.svg", alt: "Illustrative CRM pipeline map showing five stages with ownership, qualification and follow-up actions.", caption: "Illustrative CRM map — stages and actions should reflect the real sales process." },
+    ],
     videos: [],
     results: {
       intended: [
@@ -306,7 +310,9 @@ export const projects: Project[] = [
       "Contact is created or updated (deduped by email/phone)",
       "A workflow is triggered for follow-up or internal notification",
     ],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/workflows/integrations-webhooks.svg", alt: "Illustrative integration map showing an external event passing through a webhook, field mapping and contact matching into GoHighLevel.", caption: "Illustrative integration map — actual fields and safeguards depend on the connected tools." },
+    ],
     videos: [],
     results: {
       intended: [
@@ -345,7 +351,9 @@ export const projects: Project[] = [
       "Low confidence or sensitive topic → conversation is assigned to a human with full context",
       "Outcome is logged on the contact for follow-up",
     ],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/workflows/ai-workflow.svg", alt: "Illustrative AI workflow map showing conversation handling, qualification, booking and human escalation.", caption: "Illustrative AI map — the human escalation path is part of the design." },
+    ],
     videos: [],
     results: {
       intended: [
@@ -379,7 +387,9 @@ export const projects: Project[] = [
       "No-show → reschedule sequence starts automatically",
       "Showed → post-call follow-up workflow begins",
     ],
-    screenshots: [],
+    screenshots: [
+      { src: "/images/workflows/booking-reminders.svg", alt: "Illustrative appointment workflow map showing booking, intake capture, reminders and rescheduling or follow-up.", caption: "Illustrative appointment map — reminder timing can be tailored to the business." },
+    ],
     videos: [],
     results: {
       intended: [
