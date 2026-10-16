@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 font-semibold text-zinc-900">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-sm font-bold text-white">
             {site.name
-              .split(" ")
+              .replace(/['’]s\b/gi, "").split(" ")
               .map((n) => n[0])
               .join("")
               .slice(0, 2)}
