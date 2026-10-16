@@ -38,7 +38,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="font-medium text-accent-700 hover:underline"
               >
-                linkedin.com/in/abeabrandon
+                linkedin.com/in/cho-macdolf-766021292
               </a>
             </ContactRow>
           </div>
