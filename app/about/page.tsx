@@ -44,7 +44,7 @@ export default function AboutPage() {
           About me
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-zinc-600">
-          I&apos;m a {site.role.toLowerCase()} — a{" "}
+          I&apos;m {site.personName}, a {site.role.toLowerCase()} —{" "}
           {site.association.toLowerCase()}. My background spans web
           development, digital marketing, SEO, social media management, SaaS
           development, CRM management, and business process automation.
