@@ -5,7 +5,7 @@
  * Fields left as empty strings are hidden on the site rather than faked.
  */
 export const site = {
-  name: "Abea Brandon",
+  name: "My Portfolio",
   role: "GoHighLevel Virtual Assistant & Automation Specialist",
   tagline:
     "GoHighLevel systems, workflows & automation that work for your business.",
