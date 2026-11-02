@@ -49,7 +49,7 @@ export default function ContactPage() {
             <CalendarClock className="h-6 w-6" aria-hidden="true" />
           </span>
           <h2 className="mt-5 text-xl font-bold text-zinc-900">
-            Book a call
+            Subscribe to my calendar
           </h2>
           <p className="mt-2 text-zinc-600">
             The fastest way to get started — pick a time that suits you and
@@ -57,15 +57,13 @@ export default function ContactPage() {
           </p>
           <a
             href={site.calendarLink}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white hover:bg-accent-700"
           >
-            Pick a time
+            Subscribe to calendar
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </a>
           <p className="mt-3 text-sm text-zinc-500">
-            Opens Google Calendar scheduling in a new tab.
+            Opens your default calendar app to subscribe.
           </p>
         </div>
       </div>
