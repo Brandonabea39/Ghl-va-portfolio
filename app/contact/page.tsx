@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, CalendarClock, Linkedin, Mail } from "lucide-react";
+import { CalendarClock, Linkedin, Mail } from "lucide-react";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Discuss a GoHighLevel project — book a call or reach out directly about CRM setup, workflow automation, funnels, integrations, or ongoing support.",
+    "Get in touch about a GoHighLevel project, or view my shared calendar. Reach out about CRM setup, workflow automation, funnels, integrations, or ongoing support.",
 };
 
 export default function ContactPage() {
@@ -44,30 +44,28 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center rounded-xl border border-accent-200 bg-accent-50 p-8">
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent-600 text-white">
-            <CalendarClock className="h-6 w-6" aria-hidden="true" />
-          </span>
-          <h2 className="mt-5 text-xl font-bold text-zinc-900">
-            Book a call
-          </h2>
-          <p className="mt-2 text-zinc-600">
-            The fastest way to get started — pick a time that suits you and
-            we&apos;ll walk through your project together.
-          </p>
-          <a
-            href={site.calendarLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 font-semibold text-white hover:bg-accent-700"
-          >
-            Pick a time
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </a>
-          <p className="mt-3 text-sm text-zinc-500">
-            Opens Google Calendar scheduling in a new tab.
-          </p>
-        </div>
+        <section className="overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm" aria-labelledby="calendar-heading">
+          <div className="flex items-start gap-4 border-b border-zinc-100 p-6">
+            <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent-50 text-accent-700">
+              <CalendarClock className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div>
+              <h2 id="calendar-heading" className="text-xl font-bold text-zinc-900">
+                Shared calendar
+              </h2>
+              <p className="mt-2 text-sm text-zinc-600">
+                View upcoming events and dates in my calendar.
+              </p>
+            </div>
+          </div>
+          <iframe
+            src={site.calendarEmbedUrl}
+            title={`${site.personName}'s Google Calendar`}
+            className="h-[600px] w-full border-0 bg-white"
+            loading="lazy"
+            scrolling="no"
+          />
+        </section>
       </div>
     </div>
   );
