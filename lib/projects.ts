@@ -36,6 +36,8 @@ export interface Screenshot {
   src: string;
   alt: string;
   caption?: string;
+  /** Keep full-height builder screenshots uncropped in cards and galleries. */
+  fit?: "contain" | "cover";
 }
 
 export interface Video {
@@ -249,9 +251,7 @@ export const projects: Project[] = [
       "Not engaged → next follow-up message is sent",
       "After the final touch, lead status is updated and the lead exits the workflow",
     ],
-    screenshots: [
-      { src: "/images/workflows/lead-follow-up.svg", alt: "Illustrative lead follow-up workflow map showing enquiry capture, instant reply, engagement checks and pipeline updates.", caption: "Illustrative workflow map — enquiry through timely follow-up and pipeline update." },
-    ],
+    screenshots: [],
     videos: [],
     results: {
       intended: [
@@ -263,6 +263,49 @@ export const projects: Project[] = [
     featured: true,
     published: true,
   },
+  {
+    id: "wf-trigger-links",
+    slug: "trigger-link-engagement",
+    title: "Trigger Link Engagement Workflow",
+    category: "Workflows & Automation",
+    summary:
+      "A GoHighLevel workflow that branches on tracked link clicks, runs branch-specific actions, and records the interaction on the contact.",
+    context:
+      "The workflow builder screenshot shows separate trigger links feeding conditional branches, with math operations and contact notes on each path.",
+    objectives: [
+      "Route each tracked link click to the matching branch",
+      "Keep the resulting action visible on the contact record",
+      "Provide a clear fallback for clicks that do not match a branch",
+    ],
+    role: "Workflow structure, trigger links, condition branches, and contact-note actions.",
+    tools: ["GHL Workflows", "Trigger links", "Conditions", "Math operations", "Contact notes"],
+    workflow: [
+      "A contact clicks a tracked Instagram, unsubscribe, or Pinterest link",
+      "The workflow identifies which trigger link fired",
+      "The matching condition branch runs its configured math operation",
+      "A branch-specific note is added to the contact record",
+      "Unmatched activity can be routed into another workflow",
+    ],
+    screenshots: [
+      {
+        src: "/images/workflows/trigger-link-builder.png",
+        alt: "Screenshot of the GoHighLevel Trigger link workflow with three link-click triggers, conditional branches, math operations, and contact notes.",
+        caption: "GoHighLevel workflow builder — tracked link clicks routed into separate action branches.",
+        fit: "contain",
+      },
+    ],
+    videos: [],
+    results: {
+      intended: [
+        "Make link engagement actionable inside the CRM",
+        "Keep branch-specific activity visible for follow-up",
+      ],
+    },
+    illustrative: true,
+    featured: true,
+    published: true,
+  },
+
   {
     id: "crm-pipeline",
     slug: "crm-pipeline-system",
@@ -286,9 +329,7 @@ export const projects: Project[] = [
       "Build smart lists for the views the team actually works from",
       "Set up duplicate-prevention rules on create",
     ],
-    screenshots: [
-      { src: "/images/workflows/crm-pipeline.svg", alt: "Illustrative CRM pipeline map showing five stages with ownership, qualification and follow-up actions.", caption: "Illustrative CRM map — stages and actions should reflect the real sales process." },
-    ],
+    screenshots: [],
     videos: [],
     results: {
       intended: [
@@ -305,7 +346,9 @@ export const projects: Project[] = [
     title: "Third-Party Integrations & Webhooks",
     category: "Integrations & Webhooks",
     summary:
-      "Connecting external platforms to GHL — inbound webhooks for lead capture, outbound webhooks for data sync, and middleware (Make/Zapier) where direct connections don't exist.",
+      "Connecting external tools to GoHighLevel through inbound webhooks and API-based data handoffs, with contact details mapped and follow-up routed automatically.",
+    context:
+      "The screenshots show webhook intake into GoHighLevel, Copper contact sync, and an n8n flow that reads Google Sheets rows, sends them to Expandi, writes results back, and clears processed rows.",
     problem:
       "Lead and customer data scattered across tools that don't talk to each other means manual re-entry and missed follow-ups.",
     objectives: [
@@ -314,16 +357,40 @@ export const projects: Project[] = [
       "Avoid brittle, undocumented point-to-point glue",
     ],
     role: "Integration design, webhook configuration, payload mapping, end-to-end testing.",
-    tools: ["GHL Webhooks", "GHL API", "Make", "Zapier", "Custom fields"],
+    tools: ["GoHighLevel", "Webhooks", "n8n", "Copper", "Google Sheets", "Expandi", "APIs"],
     workflow: [
-      "External platform fires an event (form submission, purchase, booking)",
-      "Webhook delivers the payload to GHL or middleware",
-      "Payload fields are mapped to GHL contact and custom fields",
-      "Contact is created or updated (deduped by email/phone)",
-      "A workflow is triggered for follow-up or internal notification",
+      "An inbound webhook or scheduled automation starts from the source platform",
+      "Contact or spreadsheet data is retrieved from Copper or Google Sheets",
+      "Fields are normalized and mapped before the handoff",
+      "GoHighLevel creates or updates the matching contact and runs follow-up actions",
+      "An external API request is sent when the flow requires it",
+      "Processing results are recorded for the next team action or written back to the sheet",
     ],
     screenshots: [
-      { src: "/images/workflows/integrations-webhooks.svg", alt: "Illustrative integration map showing an external event passing through a webhook, field mapping and contact matching into GoHighLevel.", caption: "Illustrative integration map — actual fields and safeguards depend on the connected tools." },
+      {
+        src: "/images/workflows/begin-multiplier-webhook.png",
+        alt: "GoHighLevel inbound webhook workflow for Begin Multiplier Method Assessment, creating a contact, adding a tag, waiting 24 hours, and sending an email.",
+        caption: "GoHighLevel inbound webhook — assessment lead capture and delayed email follow-up.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/copper-lead-to-ghl.png",
+        alt: "GoHighLevel Copper Lead To GHL workflow with an inbound webhook, contact creation, note, tag, and email condition.",
+        caption: "GoHighLevel webhook — Copper lead intake with contact notes, tags, and conditional handling.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/google-sheets-to-expandi.png",
+        alt: "n8n Google Sheet To Expandi workflow showing a schedule trigger, reading and looping through sheet rows, sending an API request, appending results, and clearing the sheet.",
+        caption: "n8n integration — Google Sheets rows sent to Expandi with results written back.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/copper-to-highlevel-n8n.png",
+        alt: "n8n Copper To HighLevel workflow showing Copper triggers, contact lookups, LinkedIn URL normalization, personal detail mapping, and GoHighLevel contact upsert.",
+        caption: "n8n integration — Copper contact data normalized and synced to GoHighLevel.",
+        fit: "contain",
+      },
     ],
     videos: [],
     results: {
@@ -364,7 +431,12 @@ export const projects: Project[] = [
       "Outcome is logged on the contact for follow-up",
     ],
     screenshots: [
-      { src: "/images/workflows/ai-workflow.svg", alt: "Illustrative AI workflow map showing conversation handling, qualification, booking and human escalation.", caption: "Illustrative AI map — the human escalation path is part of the design." },
+      {
+        src: "/images/workflows/content-ai-builder.png",
+        alt: "Screenshot of the GoHighLevel Content AI Automation workflow with a form submission trigger, three OpenAI actions, an email step, and an SMS step.",
+        caption: "GoHighLevel workflow builder — Content AI Automation.",
+        fit: "contain",
+      },
     ],
     videos: [],
     results: {
@@ -400,7 +472,12 @@ export const projects: Project[] = [
       "Showed → post-call follow-up workflow begins",
     ],
     screenshots: [
-      { src: "/images/workflows/booking-reminders.svg", alt: "Illustrative appointment workflow map showing booking, intake capture, reminders and rescheduling or follow-up.", caption: "Illustrative appointment map — reminder timing can be tailored to the business." },
+      {
+        src: "/images/workflows/ice-cream-builder.png",
+        alt: "Screenshot of the GoHighLevel Ice-cream workflow with a form trigger, email action, tag action, and flavor condition branches.",
+        caption: "GoHighLevel workflow builder — form submission with flavor-based branches.",
+        fit: "contain",
+      },
     ],
     videos: [],
     results: {
