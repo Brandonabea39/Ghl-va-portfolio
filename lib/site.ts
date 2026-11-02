@@ -19,7 +19,7 @@ export const site = {
   email: "Macdolf67166@gmail.com",
   linkedin: "https://www.linkedin.com/in/cho-macdolf-766021292",
   upwork: "",
-  calendarLink: "https://calendar.app.google/PPpBqN414yVXSp5J7",
+  calendarLink: "webcal://p53-caldav.icloud.com/published/2/MjE2MDU4MDIzMjQyMTYwNWAHXkj2f0UQq619QKjzTvbRVobc2UTBsnNWvEgtKI1_TPNl47-RnLIza2Vd4O0fhLFsNG6w1GFytZqtuDnbUhE",
 } as const;
 
 export const navLinks = [
