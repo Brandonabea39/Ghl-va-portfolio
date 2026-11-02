@@ -64,17 +64,17 @@ export default function HomePage() {
             <figure className="relative overflow-hidden rounded-2xl border border-white bg-zinc-900 shadow-2xl shadow-zinc-900/15 ring-1 ring-zinc-900/5">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/images/websites/restaurant-homepage.jpg"
-                  alt="Restaurant website screenshot showing a food photography hero and featured meal categories."
+                  src="/images/workflows/copper-to-highlevel-n8n.png"
+                  alt="n8n Copper To HighLevel workflow showing Copper triggers, contact lookups, LinkedIn URL normalization, personal detail mapping, and GoHighLevel contact sync."
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <figcaption className="flex items-center justify-between gap-4 border-t border-white/10 bg-zinc-950 px-5 py-4 text-sm">
-                <span className="font-medium text-white">Restaurant website build</span>
-                <span className="shrink-0 rounded-full bg-amber-300/10 px-2.5 py-1 text-xs font-semibold text-amber-200">Website screenshot</span>
+                <span className="font-medium text-white">Copper → GoHighLevel integration</span>
+                <span className="shrink-0 rounded-full bg-amber-300/10 px-2.5 py-1 text-xs font-semibold text-amber-200">Workflow screenshot</span>
               </figcaption>
             </figure>
           </div>
