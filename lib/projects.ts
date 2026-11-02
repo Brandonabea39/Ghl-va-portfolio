@@ -220,38 +220,34 @@ export const projects: Project[] = [
   {
     id: "wf-lead-followup",
     slug: "automated-lead-follow-up",
-    title: "Automated Lead Follow-Up System",
+    title: "Assessment Lead Follow-Up Workflow",
     category: "Workflows & Automation",
     summary:
-      "A GHL workflow pattern that follows up with new enquiries over several days, checks engagement, and updates lead status — so no lead goes cold from silence.",
+      "A GoHighLevel inbound webhook creates a contact, applies an assessment tag, waits 24 hours, and sends a follow-up email.",
     context:
-      "Service businesses routinely lose leads not to competitors but to slow follow-up. This pattern answers every enquiry within minutes and keeps a structured cadence going without manual effort.",
-    problem:
-      "Enquiries arrive at all hours; manual follow-up is inconsistent and leads quietly go stale.",
+      "The Begin Multiplier Method Assessment screenshot shows an inbound webhook trigger followed by contact creation, a tag, a 24-hour wait, and a follow-up email.",
     objectives: [
-      "Respond to every new enquiry immediately",
-      "Maintain a multi-touch cadence without manual work",
-      "Keep pipeline stages accurate as leads engage or go quiet",
+      "Capture assessment submissions from an inbound webhook",
+      "Create the contact and apply an assessment tag",
+      "Send a follow-up email after 24 hours",
     ],
-    role: "Workflow architecture, build, and testing in the GHL workflow builder.",
-    tools: [
-      "GHL Workflows",
-      "Email & SMS actions",
-      "Wait / condition steps",
-      "Pipelines",
-      "Tags",
-    ],
+    role: "Inbound webhook setup, contact actions, tagging, wait step, and email follow-up.",
+    tools: ["GoHighLevel", "Inbound Webhook", "Contact Actions", "Tags", "Wait Step", "Email"],
     workflow: [
-      "Lead submits inquiry",
-      "Contact is created or updated",
-      "Instant acknowledgement (email + SMS) is sent",
-      "Conditional wait period",
-      "Engagement is checked (reply, click, or booking)",
-      "Engaged → pipeline stage advances and the owner is notified",
-      "Not engaged → next follow-up message is sent",
-      "After the final touch, lead status is updated and the lead exits the workflow",
+      "An inbound webhook receives a Begin Multiplier Method Assessment submission",
+      "The contact is created in GoHighLevel",
+      "An assessment tag is applied",
+      "The workflow waits 24 hours",
+      "A follow-up email is sent",
     ],
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/images/workflows/begin-multiplier-webhook.png",
+        alt: "GoHighLevel inbound webhook workflow for Begin Multiplier Method Assessment, creating a contact, adding a tag, waiting 24 hours, and sending an email.",
+        caption: "Begin Multiplier Method Assessment — webhook capture and 24-hour email follow-up.",
+        fit: "contain",
+      },
+    ],
     videos: [],
     results: {
       intended: [
@@ -259,7 +255,6 @@ export const projects: Project[] = [
         "Pipeline stages stay accurate without manual bookkeeping",
       ],
     },
-    illustrative: true,
     featured: true,
     published: true,
   },
@@ -347,7 +342,7 @@ export const projects: Project[] = [
     summary:
       "Connecting external tools to GoHighLevel through inbound webhooks and API-based data handoffs, with contact details mapped and follow-up routed automatically.",
     context:
-      "The screenshots show webhook intake into GoHighLevel, Copper contact sync, and an n8n flow that reads Google Sheets rows, sends them to Expandi, writes results back, and clears processed rows.",
+      "The screenshots show Copper leads entering GoHighLevel through a webhook, Copper contact data synced with n8n, and an n8n flow that sends Google Sheets rows to Expandi and writes results back.",
     problem:
       "Lead and customer data scattered across tools that don't talk to each other means manual re-entry and missed follow-ups.",
     objectives: [
@@ -366,12 +361,6 @@ export const projects: Project[] = [
       "Processing results are recorded for the next team action or written back to the sheet",
     ],
     screenshots: [
-      {
-        src: "/images/workflows/begin-multiplier-webhook.png",
-        alt: "GoHighLevel inbound webhook workflow for Begin Multiplier Method Assessment, creating a contact, adding a tag, waiting 24 hours, and sending an email.",
-        caption: "GoHighLevel inbound webhook — assessment lead capture and delayed email follow-up.",
-        fit: "contain",
-      },
       {
         src: "/images/workflows/copper-lead-to-ghl.png",
         alt: "GoHighLevel Copper Lead To GHL workflow with an inbound webhook, contact creation, note, tag, and email condition.",
