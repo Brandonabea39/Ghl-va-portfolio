@@ -57,7 +57,7 @@ export default function Lightbox({ shots }: { shots: Screenshot[] }) {
                   fill
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform hover:scale-[1.02]"
+                  className={`${s.fit === "contain" ? "object-contain" : "object-cover"} transition-transform hover:scale-[1.02]`}
                 />
               </div>
             </button>

@@ -43,7 +43,7 @@ export default function ProjectThumb({ project }: { project: Project }) {
           alt={shot.alt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
+          className={shot.fit === "contain" ? "object-contain" : "object-cover"}
         />
       </div>
     );
