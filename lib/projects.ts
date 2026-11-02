@@ -346,7 +346,9 @@ export const projects: Project[] = [
     title: "Third-Party Integrations & Webhooks",
     category: "Integrations & Webhooks",
     summary:
-      "Connecting external platforms to GHL — inbound webhooks for lead capture, outbound webhooks for data sync, and middleware (Make/Zapier) where direct connections don't exist.",
+      "Connecting external tools to GoHighLevel through inbound webhooks and API-based data handoffs, with contact details mapped and follow-up routed automatically.",
+    context:
+      "The screenshots show webhook intake into GoHighLevel, Copper contact sync, and an n8n flow that reads Google Sheets rows, sends them to Expandi, writes results back, and clears processed rows.",
     problem:
       "Lead and customer data scattered across tools that don't talk to each other means manual re-entry and missed follow-ups.",
     objectives: [
@@ -355,15 +357,41 @@ export const projects: Project[] = [
       "Avoid brittle, undocumented point-to-point glue",
     ],
     role: "Integration design, webhook configuration, payload mapping, end-to-end testing.",
-    tools: ["GHL Webhooks", "GHL API", "Make", "Zapier", "Custom fields"],
+    tools: ["GoHighLevel", "Webhooks", "n8n", "Copper", "Google Sheets", "Expandi", "APIs"],
     workflow: [
-      "External platform fires an event (form submission, purchase, booking)",
-      "Webhook delivers the payload to GHL or middleware",
-      "Payload fields are mapped to GHL contact and custom fields",
-      "Contact is created or updated (deduped by email/phone)",
-      "A workflow is triggered for follow-up or internal notification",
+      "An inbound webhook or scheduled automation starts from the source platform",
+      "Contact or spreadsheet data is retrieved from Copper or Google Sheets",
+      "Fields are normalized and mapped before the handoff",
+      "GoHighLevel creates or updates the matching contact and runs follow-up actions",
+      "An external API request is sent when the flow requires it",
+      "Processing results are recorded for the next team action or written back to the sheet",
     ],
-    screenshots: [],
+    screenshots: [
+      {
+        src: "/images/workflows/begin-multiplier-webhook.png",
+        alt: "GoHighLevel inbound webhook workflow for Begin Multiplier Method Assessment, creating a contact, adding a tag, waiting 24 hours, and sending an email.",
+        caption: "GoHighLevel inbound webhook — assessment lead capture and delayed email follow-up.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/copper-lead-to-ghl.png",
+        alt: "GoHighLevel Copper Lead To GHL workflow with an inbound webhook, contact creation, note, tag, and email condition.",
+        caption: "GoHighLevel webhook — Copper lead intake with contact notes, tags, and conditional handling.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/google-sheets-to-expandi.png",
+        alt: "n8n Google Sheet To Expandi workflow showing a schedule trigger, reading and looping through sheet rows, sending an API request, appending results, and clearing the sheet.",
+        caption: "n8n integration — Google Sheets rows sent to Expandi with results written back.",
+        fit: "contain",
+      },
+      {
+        src: "/images/workflows/copper-to-highlevel-n8n.png",
+        alt: "n8n Copper To HighLevel workflow showing Copper triggers, contact lookups, LinkedIn URL normalization, personal detail mapping, and GoHighLevel contact upsert.",
+        caption: "n8n integration — Copper contact data normalized and synced to GoHighLevel.",
+        fit: "contain",
+      },
+    ],
     videos: [],
     results: {
       intended: [
