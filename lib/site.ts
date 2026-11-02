@@ -19,7 +19,7 @@ export const site = {
   email: "Macdolf67166@gmail.com",
   linkedin: "https://www.linkedin.com/in/cho-macdolf-766021292",
   upwork: "",
-  calendarLink: "https://calendar.app.google/PPpBqN414yVXSp5J7",
+  calendarEmbedUrl: "https://calendar.google.com/calendar/embed?src=e1cd5a40c548095e348600ce3ca29ef672bd1f12e41d9ff253cc3d3fa0ccec53%40group.calendar.google.com&ctz=America%2FChicago",
 } as const;
 
 export const navLinks = [
